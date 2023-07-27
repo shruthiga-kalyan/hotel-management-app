@@ -1,0 +1,97 @@
+/* SignIn.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  
+  .uth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin: 80px auto 0;
+    padding: 3rem;
+    border: 1px solid white;
+    box-shadow: 0 2px 4px rgba(29, 26, 26, 0.4);
+    background-color: #fff;
+  }
+  
+  .login-form,
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #eae1e1;
+    background-color: #fff;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .uth-form {
+      padding: 4rem;
+      border: 0px solid #c8c8b3;
+      background-color: #fff;
+    }
+  }
+  
+  label {
+    text-align: left;
+    padding: 0.25rem 0;
+    color: #000;
+  }
+  
+  input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    padding-right: 5rem;
+    border: none;
+    border: 1px solid #383030;
+  }
+  
+  button {
+    border: none;
+    border: 1px solid #eae1e1;
+    background-color: #cf561a;
+    color: #fff;
+    margin: 0.5rem;
+    padding: 13px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .dont {
+    color: #302020;
+  }
+  
+  .link-btn {
+    background: none;
+    color: #110b0b;
+    text-decoration: underline;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .login-btn {
+    background-color: #cf561a;
+
+
+
+    border: 1px solid #eae1e1;
+    border-radius: 10px;
+    padding: 13px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+
+
+
+  

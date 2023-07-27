@@ -36,7 +36,8 @@ const AppAppBar = () => {
             variant="h6"
             underline="none"
             color="inherit"
-            // href="/premium-themes/onepirate/"
+
+            href="/"
             sx={{ fontSize: 24, fontFamily:'Roboto Condensed,sans-serif',fontWeight:'700'}}
            
           >

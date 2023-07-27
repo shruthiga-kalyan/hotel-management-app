@@ -10,48 +10,63 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import { Card, CardContent, CardMedia, Divider } from '@mui/material';
 
-export default function Content() {
+import { Route,Routes } from 'react-router-dom';
+
+
+import AddRoom from './AdminDash/AddRoom';
+import UpdateRoom from './AdminDash/UpdateRoom';
+import DeleteRoom from './AdminDash/DeleteRoom';
+import ListRoom from './AdminDash/ListRoom';
+
+const Content = () => {
   return (
-    <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
-      <AppBar
-        position="static"
-        color="default"
-        elevation={0}
-        sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.12)' }}
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 16,
+      }}
+    >
+      <Card
+        sx={{
+          maxWidth: 400,
+          margin: 'auto',
+          boxShadow: 3,
+        }}
       >
-        <Toolbar>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item>
-              <SearchIcon color="inherit" sx={{ display: 'block' }} />
-            </Grid>
-            <Grid item xs>
-              <TextField
-                fullWidth
-                placeholder="Search by email address, phone number, or user UID"
-                InputProps={{
-                  disableUnderline: true,
-                  sx: { fontSize: 'default' },
-                }}
-                variant="standard"
-              />
-            </Grid>
-            <Grid item>
-              <Button variant="contained" sx={{ mr: 1 }}>
-                Add user
-              </Button>
-              <Tooltip title="Reload">
-                <IconButton>
-                  <RefreshIcon color="inherit" sx={{ display: 'block' }} />
-                </IconButton>
-              </Tooltip>
-            </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-      <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
-        No users for this project yet
-      </Typography>
-    </Paper>
+        <CardMedia
+          component="img"
+          height="200"
+          image="https://st2.depositphotos.com/1743476/11581/i/450/depositphotos_115812366-stock-photo-happy-laughing-man.jpg"
+          alt="Profile Image"
+        />
+        <CardContent
+          sx={{
+            padding: 2,
+          }}
+        >
+          <Typography variant="h6" gutterBottom sx={{ marginBottom: 1 }}>
+            Name: Sam Smith
+          </Typography>
+          <Divider sx={{ margin: '2px 0' }} />
+          <Typography variant="body1" sx={{ marginBottom: 1 }}>
+            <strong>First Name:</strong> Sam
+          </Typography>
+          <Typography variant="body1" sx={{ marginBottom: 1 }}>
+            <strong>Last Name:</strong> Smith
+          </Typography>
+          <Typography variant="body1" sx={{ marginBottom: 1 }}>
+            <strong>Email:</strong> samsmith@gmail.com
+          </Typography>
+        </CardContent>
+      </Card>
+
+    
+    </div>
   );
-}
+};
+
+export default Content;

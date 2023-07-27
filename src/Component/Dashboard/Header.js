@@ -14,15 +14,17 @@ import Tabs from '@mui/material/Tabs';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
+import { useSelector} from 'react-redux';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
 function Header(props) {
   const { onDrawerToggle } = props;
+  // const user=useSelector((state)=>state.user.firstname);
 
   return (
     <React.Fragment>
-      <AppBar color="primary" position="sticky" elevation={0}>
+      <AppBar  position="sticky" elevation={0} style={{backgroundColor:'#081627'}}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
             <Grid sx={{ display: { sm: 'none', xs: 'block' } }} item>
@@ -54,9 +56,12 @@ function Header(props) {
               </Link>
             </Grid>
             
+              <h4 style={{marginBottom:'5px',marginTop:'6px'}}> Welcome 
+              {/* {user.firstname}  */}
+              </h4>
             <Grid item>
-              <IconButton color="inherit" sx={{ p: 0.5 }}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
+              <IconButton  sx={{ p: 0.5 }}>
+                <Avatar >U</Avatar>
               </IconButton>
             </Grid>
           </Grid>

@@ -25,12 +25,12 @@ const analytics = getAnalytics(app);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    {/* <Provider store={store}> */}
+    <Provider store={store}>
     <ProSidebarProvider>
 
     <App />
     </ProSidebarProvider>
-    {/* </Provider> */}
+    </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

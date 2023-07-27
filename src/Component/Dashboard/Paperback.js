@@ -8,18 +8,19 @@ import Link from '@mui/material/Link';
 import Navigator from './Navigator';
 import Content from './Content';
 import Header from './Header';
+import { Routes,Route } from 'react-router-dom';
+import Bookings from './AdminDash/Bookings';
+import AdminBillings from './AdminDash/AdminBillings';
+import AdminServices from './AdminDash/AdminServices';
+import Paper from '@mui/material/Paper';
+// import AddRoom from './Room/AddRoom';
+// import DeleteRoom from './Room/DeleteRoom'
+// import UpdateRoom from './Room/UpdateRoom'
+// import ListRoom from './Room/ListRoom'
+// import {Grid} from '@mui/icons-material/Grid'
+// import Switch from 'react-router-dom/Switch';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}.
-    </Typography>
-  );
-}
+
 
 let theme = createTheme({
   palette: {
@@ -195,17 +196,37 @@ export default function Paperbase() {
             PaperProps={{ style: { width: drawerWidth } }}
             sx={{ display: { sm: 'block', xs: 'none' } }}
           />
+           
+
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <Header onDrawerToggle={handleDrawerToggle} />
           <Box component="main" sx={{ flex: 1, py: 6, px: 4, bgcolor: '#eaeff1' }}>
             <Content />
           </Box>
-          <Box component="footer" sx={{ p: 2, bgcolor: '#eaeff1' }}>
-            <Copyright />
-          </Box>
+          
         </Box>
       </Box>
+      {/* <Navigator/>
+      <Header/> */}
+            
+      <Paper elevation={10} className="paperpp">
+              
+      </Paper>
+      
+
+      <Routes>
+              <Route path="/adminBookings" element={<Bookings/>} />
+                <Route path="/adminServices" element={<AdminServices/>} />
+                {/* <Route path="/addRoom" element={<AddRoom/>} />
+                <Route path="/updateRoom" element={<UpdateRoom/>} />
+                <Route path="/deleteRoom" element={<DeleteRoom/>} />
+                <Route path="/listRoom" element={<ListRoom/>} /> */}
+                {/* <Route path="/adminBillings" element={<AdminBillings/>} /> */}
+                </Routes>
+   
+
+               {/* <AddRoom/> */}
     </ThemeProvider>
   );
 }

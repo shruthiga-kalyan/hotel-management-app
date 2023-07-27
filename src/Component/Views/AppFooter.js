@@ -24,9 +24,9 @@ export default function AppFooter() {
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <Typography variant="h6" marked="left" gutterBottom>
-              Follow Us!
+             {/* follow us  */}
             </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', bgcolor: '#FFF5F8', marginTop: '5px', justifyContent: 'flex-start' }}>
               <Box component="a" href="https://mui.com/" sx={iconStyle}>
                 <img
                   src="https://img.icons8.com/?size=512&id=118555&format=png"

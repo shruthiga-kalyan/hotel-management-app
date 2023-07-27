@@ -7,83 +7,108 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import HomeIcon from '@mui/icons-material/Home';
 import PeopleIcon from '@mui/icons-material/People';
 import DnsRoundedIcon from '@mui/icons-material/DnsRounded';
 import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
-import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
-import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
-import TimerIcon from '@mui/icons-material/Timer';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
+import { useNavigate } from 'react-router-dom';
+import Bookings from './AdminDash/Bookings';
+import AdminBillings from './AdminDash/AdminBillings';
+import AdminServices from './AdminDash/AdminServices';
+import { Route } from 'react-router-dom';
 
-const categories = [
-  {
-    id: 'Build',
-    children: [
-      {
-        id: 'Authentication',
-        icon: <PeopleIcon />,
-        active: true,
-      },
-      { id: 'Database', icon: <DnsRoundedIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
-     
-    ],
-  },
-  
-];
+
+
 
 const item = {
   py: '2px',
   px: 3,
   color: 'rgba(255, 255, 255, 0.7)',
   '&:hover, &:focus': {
-    bgcolor: 'rgba(255, 255, 255, 0.08)',
+    bgcolor: '"#28282A"',
   },
 };
 
 const itemCategory = {
-  boxShadow: '0 -1px 0 rgb(255,255,255,0.1) inset',
+  boxShadow: '0 -1px 0 #28282A inset',
   py: 1.5,
   px: 3,
 };
 
-export default function Navigator(props) {
-  const { ...other } = props;
+
+export default function Navigator(props) {  const { ...other } = props;
+
+const navigate=useNavigate('');
+
+const handleNavigate = (path) => {
+  
+  navigate(path);
+};
 
   return (
-    <Drawer variant="permanent" {...other}>
+    <Drawer variant="permanent" {...other} style={{backgroundColor:"#28282A"}}>
       <List disablePadding>
         <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
-          Hotel Tripps
+          LITTLE HOTELIER
         </ListItem>
-        <ListItem sx={{ ...item, ...itemCategory }}>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText>Dashboard</ListItemText>
-        </ListItem>
-        {categories.map(({ id, children }) => (
-          <Box key={id} sx={{ bgcolor: '#101F33' }}>
-            <ListItem sx={{ py: 2, px: 3 }}>
-              <ListItemText sx={{ color: '#fff' }}>{id}</ListItemText>
-            </ListItem>
-            {children.map(({ id: childId, icon, active }) => (
-              <ListItem disablePadding key={childId}>
-                <ListItemButton selected={active} sx={item}>
-                  <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText>{childId}</ListItemText>
-                </ListItemButton>
-              </ListItem>
-            ))}
-            <Divider sx={{ mt: 2 }} />
+
+        <ListItem>
+    <ListItemIcon style={{ backgroundColor: 'white' }}>
+      <PeopleIcon />
+    </ListItemIcon>
+    <ListItemButton sx={item}>
+      <ListItemText sx={{ color: '#fff' }} disablePadding onClick={() => { handleNavigate('/adminServices') }}>PROFILE</ListItemText>
+    </ListItemButton>
+  </ListItem>
+  <br/>
+       
+          <Box  sx={{ bgcolor: '#101F33' }}>
+
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+  <ListItem>
+    <ListItemIcon style={{ backgroundColor: 'white' }}>
+      <DnsRoundedIcon />
+    </ListItemIcon>
+    <ListItemButton sx={item}>
+      <ListItemText sx={{ color: '#fff' }} disablePadding onClick={() => { handleNavigate('/adminBookings') }}>ROOM</ListItemText>
+    </ListItemButton>
+  </ListItem>
+
+  <ListItem>
+    <ListItemIcon style={{ backgroundColor: 'white' }}>
+      <PermMediaOutlinedIcon />
+    </ListItemIcon>
+    <ListItemButton sx={item}>
+      <ListItemText sx={{ color: '#fff' }} disablePadding onClick={() => { handleNavigate('/adminServices') }}>POINT OF SERVICES</ListItemText>
+    </ListItemButton>
+  </ListItem>
+
+  <ListItem>
+    <ListItemIcon style={{ backgroundColor: 'white' }}>
+      <PublicIcon />
+    </ListItemIcon>
+    <ListItemButton sx={item}>
+      <ListItemText sx={{ color: '#fff' }} disablePadding onClick={() => { handleNavigate('/adminBillings') }}>BILLING</ListItemText>
+    </ListItemButton>
+  </ListItem>
+{/* 
+  <ListItem>
+    <ListItemIcon style={{ backgroundColor: 'white' }}>
+      <PublicIcon />
+    </ListItemIcon>
+    <ListItemButton sx={item}>
+      <ListItemText sx={{ color: '#fff' }} disablePadding onClick={() => { handleNavigate('/customer') }}>CUSTOMER</ListItemText>
+    </ListItemButton>
+  </ListItem> */}
+
+
+</div>
+
+            <Divider />
           </Box>
-        ))}
+       
       </List>
+       
     </Drawer>
   );
 }

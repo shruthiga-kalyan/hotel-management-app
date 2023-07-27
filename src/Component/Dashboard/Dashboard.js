@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import Side from './Sidebar';
-import Guest from './Guest';
+
+
+import SideU from './UserDash.js/SidebarU';
 
 function Dashboard() {
   
 
     return (
         <div>
-            <body >
-                <Side/>
-                
-              </body>
+            <SideU/>
         </div>
     )
 }
